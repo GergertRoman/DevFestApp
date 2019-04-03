@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/llMainView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorSilver">
+
+    <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+            android:id="@+id/tvTime"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@string/time"
+            android:textSize="@dimen/text_size1"
+            android:textColor="@android:color/black"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            android:layout_marginStart="@dimen/indent"
+    />
+
+    <TextView
+            android:id="@+id/tvTheme"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@string/theme"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            app:layout_constraintTop_toBottomOf="@+id/tvTime"
+            android:layout_marginStart="@dimen/indent"
+
+    />
+
+    <TextView
+            android:id="@+id/tvRoom"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@string/room"
+            android:textSize="@dimen/text_size2"
+            android:textColor="@android:color/black"
+            app:layout_constraintTop_toBottomOf="@+id/tvTheme"
+            android:layout_marginStart="@dimen/indent"
+
+    />
+
+    <ImageView
+            android:id="@+id/ivContent"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvRoom"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/android_head"
+            android:tint="@android:color/holo_green_dark"
+            android:layout_marginStart="@dimen/indent"
+            >
+    </ImageView>
+
+    <ImageView
+            android:id="@+id/tvLanguage"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:layout_constraintTop_toBottomOf="@+id/ivContent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/ic_rus"
+            android:layout_marginStart="@dimen/indent"
+            android:layout_marginTop="@dimen/indent_vertical"/>
+
+    <TextView
+            android:id="@+id/tvSpeaker"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/speaker"
+            android:textSize="@dimen/text_size2"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/ivContent"
+            app:layout_constraintLeft_toRightOf="@+id/tvLanguage"
+            android:layout_marginStart="@dimen/indent"
+            android:layout_marginTop="@dimen/indent_vertical"
+    />
+
+    <TextView
+            android:id="@+id/tvPosition"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/position_speaker"
+            android:textSize="@dimen/text_size2"
+            android:textColor="@android:color/black"
+            app:layout_constraintTop_toBottomOf="@+id/tvSpeaker"
+            app:layout_constraintLeft_toRightOf="@+id/tvLanguage"
+            android:layout_marginStart="@dimen/indent"/>
+
+    <TextView
+            android:id="@+id/tvDescription"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@string/description"
+            android:textSize="@dimen/text_size2"
+            android:textColor="@android:color/black"
+            android:background="@android:color/white"
+            app:layout_constraintTop_toBottomOf="@+id/tvLanguage"
+            android:layout_marginTop="@dimen/indent_vertical"
+            android:paddingStart="@dimen/indent"
+            android:paddingEnd="@dimen/indent"
+            android:paddingTop="@dimen/indent_vertical"
+            android:paddingBottom="@dimen/indent_vertical">
+    </TextView>
+
+    <Button
+            android:id="@+id/bButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimary"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="Все доклады"
+            android:textSize="@dimen/text_size2"
+            android:textColor="@android:color/white"
+            app:layout_constraintTop_toBottomOf="@+id/tvDescription"
+            android:layout_marginStart="@dimen/indent"
+            android:layout_marginTop="@dimen/indent_vertical"
+    />
+
+</android.support.constraint.ConstraintLayout>
+
