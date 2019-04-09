@@ -1,37 +1,49 @@
 package ru.biatech.myapplication
-
-import android.app.TabActivity
 import android.content.Intent
-import android.nfc.Tag
+
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.Toolbar
-import android.view.View
-import android.widget.Button
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.toolbar.*
 
 class MainActivity : AppCompatActivity() {
-
-
-    private var toolbar: Toolbar? = null
-    private var button: Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        initToolbar()
+        toolbar?.setTitle(R.string.app_name)
 
-        button = findViewById(R.id.bButton)
-        button?.setOnClickListener {
-            Toast.makeText(this, "Все доклады", Toast.LENGTH_LONG).show()
+        content()
+
+        bButton?.setOnClickListener {
+            Toast.makeText(this, R.string.buttonText, Toast.LENGTH_LONG).show()
         }
 
+        tvSpeaker?.setOnClickListener {
+            val speakerIntent = Intent(this@MainActivity, SpeakerActivity::class.java)
+            speakerIntent.putExtra(ACTIVITY_KEY, Tag.MINE.name)
+            startActivity(speakerIntent)
+        }
     }
 
+    fun content() {
+        tvTime?.setText(R.string.time)
 
-    private fun initToolbar() {
-        toolbar = findViewById(R.id.toolbar)
-        toolbar?.setTitle(R.string.app_name)
+        tvTheme?.setText(R.string.theme)
+
+        tvRoom?.setText(R.string.room)
+
+        ivContent?.setImageResource(R.drawable.android_head)
+
+        tvLanguage?.setImageResource(R.drawable.ic_rus)
+
+        tvSpeaker?.setText(R.string.speaker)
+        tvSpeaker?.setTextColor(resources.getColor(R.color.colorPrimary))
+
+        tvPosition?.setText(R.string.position_speaker)
+
+        tvDescription?.setText(R.string.description)
     }
 }

@@ -11,6 +11,11 @@
     <string name="position_speaker">Mobile Consultant Digital Nomad, Russia</string>
     <string name="speaker">Sergey Ryabov</string>
     <string name="room">Room 1</string>
+    <string name="buttonText">Все доклады</string>
     <string name="theme">Kotlin-friendly Annotation Processing</string>
     <string name="time">11 : 15</string>
+    <string name="info_about_speaker">
+        <![CDATA[Currently Sergey is an independent Android Engineer and Consultant with the background in backend dev. Co-organiser of the first Kotlin User Group in Russia and Android Academy in St. Petersburg and Moscow, usually speaks about Kotlin & Android. Kotlin early adopter, digital nomad.]]></string>
+    <string name="telegram_ryabov">https://t.me/colriot</string>
+    <string name="twitter_ryabov">https://twitter.com/colriot</string>
 </resources>

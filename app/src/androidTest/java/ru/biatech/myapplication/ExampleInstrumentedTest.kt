@@ -18,7 +18,7 @@ class ExampleInstrumentedTest {
     @Test
     fun useAppContext() {
         // Context of the app under test.
-        val appContext = InstrumentationRegistry.getTargetContext()
+        var appContext = InstrumentationRegistry.getTargetContext()
         assertEquals("ru.biatech.myapplication", appContext.packageName)
     }
 }
