@@ -56,25 +56,26 @@
     </ImageView>
 
     <ImageView
-            android:id="@+id/tvLanguage"
+            android:id="@+id/ivLanguage"
             android:layout_width="@dimen/width_image"
             android:layout_height="@dimen/height_image"
             app:layout_constraintTop_toBottomOf="@+id/ivContent"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="@dimen/indent"
-            android:layout_marginTop="@dimen/indent_vertical"/>
+            android:layout_marginTop="@dimen/indent_vertical"
+            />
 
     <TextView
             android:id="@+id/tvSpeaker"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:textSize="@dimen/text_size_15"
+            android:textSize="@dimen/textSize"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@+id/ivContent"
-            app:layout_constraintLeft_toRightOf="@+id/tvLanguage"
+
+
+            app:layout_constraintStart_toEndOf="@+id/ivLanguage"
             android:layout_marginStart="@dimen/indent"
-            android:layout_marginTop="@dimen/indent_vertical"
-    />
+            app:layout_constraintTop_toBottomOf="@+id/ivContent"/>
 
     <TextView
             android:id="@+id/tvPosition"
@@ -83,7 +84,7 @@
             android:textSize="@dimen/text_size_15"
             android:textColor="@android:color/black"
             app:layout_constraintTop_toBottomOf="@+id/tvSpeaker"
-            app:layout_constraintLeft_toRightOf="@+id/tvLanguage"
+            app:layout_constraintLeft_toRightOf="@+id/ivLanguage"
             android:layout_marginStart="@dimen/indent"/>
 
     <TextView
@@ -93,7 +94,7 @@
             android:textSize="@dimen/text_size_15"
             android:textColor="@android:color/black"
             android:background="@android:color/white"
-            app:layout_constraintTop_toBottomOf="@+id/tvLanguage"
+            app:layout_constraintTop_toBottomOf="@+id/ivLanguage"
             android:layout_marginTop="@dimen/indent_vertical"
             android:paddingStart="@dimen/indent"
             android:paddingEnd="@dimen/indent"

@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
 
         ivContent?.setImageResource(R.drawable.android_head)
 
-        tvLanguage?.setImageResource(R.drawable.ic_rus)
+        ivLanguage?.setImageResource(R.drawable.ic_rus)
 
         tvSpeaker?.setText(R.string.speaker)
         tvSpeaker?.setTextColor(resources.getColor(R.color.colorPrimary))
