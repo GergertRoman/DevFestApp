@@ -109,14 +109,15 @@
             app:layout_constraintTop_toBottomOf="@+id/civAvatar"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/tvTheme"
     />
 
     <View
             android:id="@+id/vProtocol"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintTop_toBottomOf="@+id/tvInfoSpeaker"
+            android:layout_height="wrap_content"
             android:background="@color/colorSilver"
+            app:layout_constraintTop_toTopOf="@+id/tvTheme"
     />
 
     <TextView
@@ -130,7 +131,7 @@
             android:paddingEnd="@dimen/indent"
             android:paddingTop="@dimen/indent_vertical"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/vProtocol"
+            app:layout_constraintBottom_toTopOf="@+id/tvRoom"
     />
 
     <TextView
@@ -139,8 +140,8 @@
             android:layout_width="match_parent"
             android:textSize="@dimen/text_size_15"
             android:textColor="@android:color/black"
-            app:layout_constraintTop_toBottomOf="@+id/tvTheme"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/ivContent"
             android:layout_marginStart="@dimen/indent"
     />
 
@@ -149,9 +150,9 @@
             android:layout_width="@dimen/width_image"
             android:layout_height="@dimen/height_image"
             android:tint="@android:color/holo_green_dark"
-            app:layout_constraintTop_toBottomOf="@+id/tvRoom"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="@dimen/indent"
+            app:layout_constraintBottom_toTopOf="@+id/tvTime"
     />
 
     <TextView
@@ -160,9 +161,10 @@
             android:layout_width="wrap_content"
             android:textSize="@dimen/text_size_20"
             android:textColor="@android:color/black"
-            app:layout_constraintTop_toBottomOf="@+id/ivContent"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="@dimen/indent"
+            android:layout_marginBottom="@dimen/indent"
+            app:layout_constraintBottom_toBottomOf="parent"
     />
 
 </android.support.constraint.ConstraintLayout>
