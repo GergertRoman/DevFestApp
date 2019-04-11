@@ -20,6 +20,7 @@
             android:textSize="@dimen/text_size_20"
             android:textColor="@android:color/black"
             app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            android:layout_marginTop="@dimen/indent_vertical"
             android:layout_marginStart="@dimen/indent"
     />
 
@@ -32,6 +33,7 @@
             android:textColor="@android:color/black"
             app:layout_constraintTop_toBottomOf="@+id/tvTime"
             android:layout_marginStart="@dimen/indent"
+            android:layout_marginTop="@dimen/indent_vertical"
     />
 
     <TextView
@@ -92,7 +94,7 @@
             android:layout_height="wrap_content"
             android:background="@android:color/white"
             app:layout_constraintTop_toBottomOf="@+id/tvPosition"
-            android:layout_marginTop="@dimen/indent_vertical"
+            android:layout_marginTop="@dimen/indent"
     />
 
     <TextView
@@ -101,15 +103,13 @@
             android:layout_width="match_parent"
             android:textSize="@dimen/text_size_15"
             android:textColor="@android:color/black"
-            android:layout_marginTop="@dimen/indent"
             android:paddingStart="@dimen/indent"
             android:paddingEnd="@dimen/indent"
             android:paddingTop="@dimen/indent_vertical"
             android:paddingBottom="@dimen/indent_vertical"
             app:layout_constraintTop_toTopOf="@+id/vDescription"
             android:scaleType="center"
-            app:layout_constraintBottom_toTopOf="@+id/bButton"
-            android:layout_marginBottom="@dimen/indent"/>
+            app:layout_constraintBottom_toTopOf="@+id/bButton"/>
 
     <Button
             android:id="@+id/bButton"
