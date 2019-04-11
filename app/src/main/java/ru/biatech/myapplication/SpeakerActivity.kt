@@ -30,7 +30,7 @@ class SpeakerActivity : AppCompatActivity() {
         }
     }
 
-    fun content() {
+    private fun content() {
         civAvatar?.setImageResource(R.drawable.sergey_ryabov)
 
         ivLanguage?.setImageResource(R.drawable.ic_rus)

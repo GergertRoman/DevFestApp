@@ -3,6 +3,7 @@ import android.content.Intent
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v4.content.ContextCompat
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.toolbar.*
@@ -28,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun content() {
+    private fun content() {
         tvTime?.setText(R.string.time)
 
         tvTheme?.setText(R.string.theme)
@@ -40,7 +41,8 @@ class MainActivity : AppCompatActivity() {
         ivLanguage?.setImageResource(R.drawable.ic_rus)
 
         tvSpeaker?.setText(R.string.speaker)
-        tvSpeaker?.setTextColor(resources.getColor(R.color.colorPrimary))
+
+        tvSpeaker?.setTextColor(ContextCompat.getColor(this, R.color.colorPrimary))
 
         tvPosition?.setText(R.string.position_speaker)
 
