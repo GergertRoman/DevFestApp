@@ -9,7 +9,8 @@
 
     <include
             layout="@layout/toolbar"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent"
+    />
 
     <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/civAvatar"
@@ -17,14 +18,15 @@
             android:layout_height="@dimen/sizeAvatar"
             app:layout_constraintTop_toBottomOf="@+id/toolbar"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="@dimen/indentImage"
+            android:layout_marginStart="@dimen/indent"
             android:layout_marginTop="@dimen/indentImage"
+            tools:src="@drawable/ic_rus"
     />
 
     <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/civBack"
             android:layout_width="@dimen/sizeBackImage"
-            android:layout_height="45dp"
+            android:layout_height="@dimen/sizeBackImage"
             android:src="@drawable/white_image"
             app:layout_constraintEnd_toEndOf="@+id/ivLanguage"
             app:layout_constraintBottom_toBottomOf="@+id/ivLanguage"
@@ -46,13 +48,14 @@
             android:id="@+id/tvSpeaker"
             android:layout_height="wrap_content"
             android:layout_width="0dp"
-            android:textSize="@dimen/headerSize"
+            android:textSize="@dimen/textSize"
             android:textAllCaps="true"
             android:textStyle="bold"
+            android:textColor="@android:color/black"
             app:layout_constraintTop_toTopOf="@+id/civAvatar"
             app:layout_constraintStart_toEndOf="@+id/civAvatar"
             android:layout_marginStart="@dimen/indent"
-            android:layout_marginTop="@dimen/indent"
+            android:layout_marginEnd="@dimen/indent"
             app:layout_constraintEnd_toEndOf="parent"
     />
 
@@ -74,25 +77,28 @@
             android:id="@+id/ivTelegram"
             android:layout_width="@dimen/width_image"
             android:layout_height="@dimen/width_image"
-            app:srcCompat="@drawable/ic_telegram"
+            tools:srcCompat="@drawable/ic_telegram"
             android:tint="@color/colorMessager"
             android:layout_marginStart="@dimen/indent"
-            android:layout_marginTop="@dimen/indent_vertical"
             app:layout_constraintTop_toBottomOf="@+id/tvPosition"
             app:layout_constraintStart_toEndOf="@+id/civAvatar"
-            app:layout_constraintBottom_toBottomOf="@+id/civAvatar"/>
+            app:layout_constraintBottom_toBottomOf="@+id/civAvatar"
+            app:layout_constraintVertical_bias="0.0"
+            android:layout_marginTop="@dimen/indent_vertical"
+    />
 
     <ImageView
             android:id="@+id/ivTwitter"
             android:layout_width="@dimen/width_image"
             android:layout_height="@dimen/width_image"
-            app:srcCompat="@drawable/ic_twitter"
+            tools:srcCompat="@drawable/ic_twitter"
             android:tint="@color/colorMessager"
             android:layout_marginStart="@dimen/indent"
-            android:layout_marginTop="@dimen/indent_vertical"
             app:layout_constraintTop_toBottomOf="@+id/tvPosition"
             app:layout_constraintStart_toEndOf="@+id/ivTelegram"
             app:layout_constraintBottom_toBottomOf="@+id/civAvatar"
+            app:layout_constraintVertical_bias="0.0"
+            android:layout_marginTop="@dimen/indent_vertical"
     />
 
     <TextView
@@ -101,6 +107,8 @@
             android:layout_height="wrap_content"
             android:textColor="@android:color/black"
             android:textSize="@dimen/text_size_15"
+            android:maxLines = "7"
+            android:scrollbars = "vertical"
             android:layout_marginTop="@dimen/indent_vertical"
             android:paddingStart="@dimen/indent"
             android:paddingEnd="@dimen/indent"

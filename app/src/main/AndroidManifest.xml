@@ -9,7 +9,11 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".SpeakerActivity">
+        <activity android:name=".SpeakerActivity"
+                  android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".DesriptionRepportActivity"
+                  android:screenOrientation="portrait">
         </activity>
         <activity
                 android:name=".MainActivity"

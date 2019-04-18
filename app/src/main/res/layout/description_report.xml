@@ -2,34 +2,6 @@
 <android.support.constraint.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    <include
-            layout="@layout/toolbar"
-            app:layout_constraintTop_toTopOf="parent"
-    />
-
-    <android.support.v7.widget.RecyclerView
-            android:id="@+id/rvSchedule"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar"
-            app:layout_constraintBottom_toBottomOf="parent"
-    />
-
-</android.support.constraint.ConstraintLayout>
-
-
-
-
-
-
-<!--
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools" android:id="@+id/llMainView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -38,18 +10,19 @@
     <include
             layout="@layout/toolbar"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/tvTime"
     />
 
     <TextView
             android:id="@+id/tvTime"
             android:layout_height="wrap_content"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:textSize="@dimen/text_size_20"
             android:textColor="@android:color/black"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar"
-            android:layout_marginTop="@dimen/indent_vertical"
             android:layout_marginStart="@dimen/indent"
+            android:layout_marginTop="@dimen/indent_vertical"
+            tools:text="@string/time"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
     />
 
     <TextView
@@ -62,6 +35,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tvTime"
             android:layout_marginStart="@dimen/indent"
             android:layout_marginTop="@dimen/indent_vertical"
+            tools:text="@string/theme"
     />
 
     <TextView
@@ -72,6 +46,7 @@
             android:textColor="@android:color/black"
             app:layout_constraintTop_toBottomOf="@+id/tvTheme"
             android:layout_marginStart="@dimen/indent"
+            tools:text="@string/room"
     />
 
     <ImageView
@@ -79,41 +54,52 @@
             android:layout_width="@dimen/width_image"
             android:layout_height="@dimen/height_image"
             android:tint="@android:color/holo_green_dark"
-            app:layout_constraintTop_toBottomOf="@+id/tvRoom"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="@dimen/indent"
+            tools:src="@drawable/ic_cellphone_ui"
+            app:layout_constraintStart_toEndOf="@+id/tvTime"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/indent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintTop_toTopOf="@+id/tvTime"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTime"
     />
 
     <ImageView
             android:id="@+id/ivLanguage"
             android:layout_width="@dimen/width_image"
             android:layout_height="@dimen/height_image"
-            app:layout_constraintTop_toBottomOf="@+id/ivContent"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="@dimen/indent"
+            tools:src="@drawable/ic_rus"
             android:layout_marginTop="@dimen/indent_vertical"
+            app:layout_constraintTop_toBottomOf="@+id/tvRoom"
     />
 
     <TextView
             android:id="@+id/tvSpeaker"
-            android:layout_height="wrap_content"
+            android:layout_height="27dp"
             android:layout_width="wrap_content"
             android:textSize="@dimen/textSize"
             android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
             app:layout_constraintStart_toEndOf="@+id/ivLanguage"
             android:layout_marginStart="@dimen/indent"
-            app:layout_constraintTop_toBottomOf="@+id/ivContent"
+            tools:text="@string/speaker"
+            app:layout_constraintTop_toTopOf="@+id/ivLanguage"
     />
 
     <TextView
             android:id="@+id/tvPosition"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:textSize="@dimen/text_size_15"
             android:textColor="@android:color/black"
             app:layout_constraintTop_toBottomOf="@+id/tvSpeaker"
-            app:layout_constraintLeft_toRightOf="@+id/ivLanguage"
+            app:layout_constraintStart_toEndOf="@+id/ivLanguage"
             android:layout_marginStart="@dimen/indent"
+            android:layout_marginEnd="@dimen/indent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="@string/position_speaker"
+            app:layout_constraintHorizontal_bias="0.0"
     />
 
     <View
@@ -122,7 +108,7 @@
             android:layout_height="wrap_content"
             android:background="@android:color/white"
             app:layout_constraintTop_toBottomOf="@+id/tvPosition"
-            android:layout_marginTop="@dimen/indent"
+            android:layout_marginTop="@dimen/indent_vertical"
     />
 
     <TextView
@@ -131,13 +117,17 @@
             android:layout_width="match_parent"
             android:textSize="@dimen/text_size_15"
             android:textColor="@android:color/black"
+            android:maxLines = "12"
+            android:scrollbars = "vertical"
             android:paddingStart="@dimen/indent"
             android:paddingEnd="@dimen/indent"
-            android:paddingTop="@dimen/indent_vertical"
-            android:paddingBottom="@dimen/indent_vertical"
+            android:layout_marginTop="@dimen/indent_vertical"
+            android:layout_marginBottom="@dimen/indent_vertical"
             app:layout_constraintTop_toTopOf="@+id/vDescription"
             android:scaleType="center"
-            app:layout_constraintBottom_toTopOf="@+id/bButton"/>
+            tools:text="@string/description"
+            app:layout_constraintBottom_toTopOf="@+id/bButton"
+    />
 
     <Button
             android:id="@+id/bButton"
@@ -151,8 +141,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginStart="@dimen/indent"
             android:layout_marginBottom="@dimen/indent"
+            tools:text="@string/buttonText"
     />
 
 </android.support.constraint.ConstraintLayout>
 
--->

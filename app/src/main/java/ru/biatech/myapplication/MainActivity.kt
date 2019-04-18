@@ -1,10 +1,10 @@
 package ru.biatech.myapplication
-import android.content.Intent
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v4.content.ContextCompat
-import android.widget.Toast
+import android.support.v7.widget.DefaultItemAnimator
+import android.support.v7.widget.DividerItemDecoration
+import android.support.v7.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.toolbar.*
 
@@ -16,36 +16,40 @@ class MainActivity : AppCompatActivity() {
 
         toolbar?.setTitle(R.string.app_name)
 
-        content()
-
-        bButton?.setOnClickListener {
-            Toast.makeText(this, R.string.buttonText, Toast.LENGTH_LONG).show()
-        }
-
-        tvSpeaker?.setOnClickListener {
-            val speakerIntent = Intent(this@MainActivity, SpeakerActivity::class.java)
-            speakerIntent.putExtra(ACTIVITY_KEY, Tag.MINE.name)
-            startActivity(speakerIntent)
-        }
+        initRecyclerView()
     }
 
-    private fun content() {
-        tvTime?.setText(R.string.time)
+    private fun initRecyclerView() {
+        var adapter = ScheduleAdapter(generateData())
+        val layoutManager = LinearLayoutManager(this)
+        val dividerItemDecoration = DividerItemDecoration(rvSchedule?.context, layoutManager.orientation)
+        rvSchedule?.addItemDecoration(dividerItemDecoration)
+        rvSchedule?.layoutManager = layoutManager
+        rvSchedule?.itemAnimator = DefaultItemAnimator()
+        rvSchedule?.adapter = adapter
+        adapter.notifyDataSetChanged()
+    }
 
-        tvTheme?.setText(R.string.theme)
+    private fun generateData(): ArrayList<InfoTopicDto> {
+        var result = ArrayList<InfoTopicDto>()
 
-        tvRoom?.setText(R.string.room)
+        for (i in 0..14) {
+            var array = resources.getStringArray(textArray[i])
+            var report = array[3] != ""
 
-        ivContent?.setImageResource(R.drawable.android_head)
+            var topic = InfoTopicDto(
+                time = array[0],
+                theme = array[1],
+                room = array[2],
+                content = contentArray[i],
+                language = languageArray[i],
+                speaker = array[3],
+                positionSpeaker = array[4],
+                report = report
+            )
+            result.add(topic)
+        }
 
-        ivLanguage?.setImageResource(R.drawable.ic_rus)
-
-        tvSpeaker?.setText(R.string.speaker)
-
-        tvSpeaker?.setTextColor(ContextCompat.getColor(this, R.color.colorPrimary))
-
-        tvPosition?.setText(R.string.position_speaker)
-
-        tvDescription?.setText(R.string.description)
+        return result
     }
 }

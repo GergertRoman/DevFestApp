@@ -1,5 +1,6 @@
 package ru.biatech.myapplication
 
 enum class Tag {
-    MINE;
+    MINE,
+    SPEAKER;
 }
