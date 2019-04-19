@@ -38,7 +38,6 @@ class DesriptionRepportActivity : AppCompatActivity() {
                 val speakerIntent = Intent(this@DesriptionRepportActivity, SpeakerActivity::class.java)
                 speakerIntent.apply {
                     putExtra(ITEM_KEY, tagRv)
-                    speakerIntent.putExtra(ACTIVITY_KEY, Tag.MINE.name)
                 }
                 startActivity(speakerIntent)
             }

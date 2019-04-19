@@ -33,29 +33,20 @@ class ScheduleAdapter(private var items: ArrayList<InfoTopicDto>): RecyclerView.
         if(infoTopicDto.report) {
             holder.content?.visibility = View.VISIBLE
             holder.language?.visibility = View.VISIBLE
-        }
-        else {
-            holder.content?.visibility = View.INVISIBLE
-            holder.language?.visibility = View.INVISIBLE
-        }
-        infoTopicDto.speaker?.let { holder.speaker?.setText(it) }
-        infoTopicDto.positionSpeaker?.let { holder.positionSpeaker?.setText(it) }
-
-        if(infoTopicDto.report) {
-            holder.theme?.setOnClickListener {
+            holder.itemView?.setOnClickListener {
                 val ctx = holder.itemView.context
                 val itemIntent = Intent(ctx, DesriptionRepportActivity::class.java)
                 itemIntent.putExtra(ITEM_KEY, position)
                 ctx.startActivity(itemIntent)
             }
-
-            holder.speaker?.setOnClickListener {
-                val ctx = holder.itemView.context
-                val itemIntent = Intent(ctx, SpeakerActivity::class.java)
-                itemIntent.putExtra(ITEM_KEY, position)
-                ctx.startActivity(itemIntent)
-            }
         }
+        else {
+            holder.content?.visibility = View.INVISIBLE
+            holder.language?.visibility = View.INVISIBLE
+            holder.itemView?.isClickable = false
+        }
+        infoTopicDto.speaker?.let { holder.speaker?.setText(it) }
+        infoTopicDto.positionSpeaker?.let { holder.positionSpeaker?.setText(it) }
     }
 
     class ViewHolder(row: View): RecyclerView.ViewHolder(row) {

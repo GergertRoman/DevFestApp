@@ -95,22 +95,14 @@ class SpeakerActivity : AppCompatActivity() {
     }
 
     private fun callScreen(tag: Int) {
-        //val tag = intent.getStringExtra(ACTIVITY_KEY)
-        //val tagRv = intent.getIntExtra(ITEM_KEY, 1)
-        /*if(tag == Tag.MINE.name) {
-            tvTheme?.setOnClickListener {
-                onBackPressed()
+        vProtocol?.setOnClickListener {
+            val speakerIntent = Intent(this@SpeakerActivity, DesriptionRepportActivity::class.java)
+            speakerIntent.apply {
+                putExtra(ITEM_KEY, tag)
+                speakerIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
             }
-        }
-        else {*/
-            tvTheme?.setOnClickListener {
-                val speakerIntent = Intent(this@SpeakerActivity, DesriptionRepportActivity::class.java)
-                speakerIntent.apply {
-                    putExtra(ITEM_KEY, tag)
-                    speakerIntent.putExtra(ACTIVITY_KEY, Tag.SPEAKER.name)
-                }
-                startActivity(speakerIntent)
-            //}
+            startActivity(speakerIntent)
+
         }
     }
 }
